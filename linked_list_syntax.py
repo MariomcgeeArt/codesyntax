@@ -3,23 +3,52 @@
 #This is the coding syntax with my corrections made in google doc
 #code does not run 
 
-from LinkedList.py import Linked_List
 
-class Stack:
-    def __init__(self,Linked_List):
-        this.list = new Linked_List()
+from linkedlist import LinkedList
 
-	def push(self,new item) :
-		this.list.prepend(newItem, index = 0)
+class Stack(LinkedList):
+    def _init_(self):
+        self.head = None;
+
+    def push(self,new_item):
+        """Insert the given item on top of this stack"""
+        # prepend given item before head node
+        self.prepend(new_item)
+
 
     def peek(self):
-        if this.List.head !== none:
-            return this.List.head.data[0]
+        """Return the item on the top of this stack"""
+        if self.is_empty():
+            return None
         else:
-            return none
+            return self.head.data
+
+    def pop(self, item):
+        """Remove and return the item on the top of this stack"""
+        item = self.peek()
+        self.delete(item)
+        return item
 
 
-    def pop(self):
-        topItem=this.peek()
-        this.List.delete(top item)
-        return(topItem)
+# if __name__ == '__main__':
+new_stack = Stack()
+
+new_stack.push(33)
+new_stack.push(22)
+new_stack.push(44)
+
+
+top = new_stack.peek()
+# Print top element of stack
+print("Top element is {}.".format(top))
+
+# # Delete top elements of stack
+new_stack.pop(66)
+new_stack.pop(99)
+
+top = new_stack.peek()
+# # Print top element of stack
+print("Top element is {}.".format(top))
+
+
+#recieved Help from Anastasia G on links to code site for code linters aswell as personal revision 
